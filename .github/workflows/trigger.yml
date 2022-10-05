@@ -17,6 +17,6 @@ jobs:
               owner: 'bilalawan321',
               repo: 'hello-world',
               workflow_id: 'build.yml',
-              ref: 'main',
+              ref: 'master',
               inputs: {key: "15"}
             })
