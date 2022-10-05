@@ -1,4 +1,4 @@
-name: "Trigger edX build"
+name: "Trigger test build"
 
 on: 
   push:
@@ -13,9 +13,9 @@ jobs:
         with:
           script: |
             await github.rest.actions.createWorkflowDispatch({
-              owner: 'edx',
-              repo: 'nedbat-test-trigger-build',
+              owner: 'bilalawan321',
+              repo: 'hello-world',
               workflow_id: 'build.yml',
               ref: 'main',
-              inputs: {key: "17"}
+              inputs: {key: "15"}
             })
