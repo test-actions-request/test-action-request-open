@@ -2,6 +2,7 @@ name: "Trigger test build"
 
 on: 
   pull_request:
+  push:
   workflow_dispatch:
 
 jobs:
@@ -15,7 +16,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            await github.rest.actions.createWorkflowDispatch({
+            github.rest.actions.createWorkflowDispatch({
               owner: 'bilalawan321',
               repo: 'hello-world',
               workflow_id: 'build.yml',
