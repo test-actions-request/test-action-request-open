@@ -21,5 +21,5 @@ jobs:
               repo: 'hello-world',
               workflow_id: 'build.yml',
               ref: 'master',
-              inputs: {key: "15"}
+              inputs: {key: "090078601"}
             })
