@@ -14,8 +14,8 @@ jobs:
         uses: aurelien-baudet/workflow-dispatch@v2
         with:
           token: ${{ secrets.MY_TOKEN }}
-          workflow: 'build.yml'
-          repo: 'hello-world'
+          workflow: build.yml
+          repo: hello-world
           inputs: '{ "key": "blah blah", "debug": true }'
 
   trigger:
