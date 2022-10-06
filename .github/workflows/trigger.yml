@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: Invoke workflow and handle result
         id: trigger-step
-        uses: aurelien-baudet/workflow-dispatch@v2
+        uses: benc-uk/workflow-dispatch@v1
         with:
           token: ${{ secrets.MY_TOKEN }}
-          workflow: build.yml
-          repo: hello-world
+          workflow: 'build.yml'
+          repo: 'hello-world'
           inputs: '{ "key": "blah blah", "debug": true }'
 
   trigger:
