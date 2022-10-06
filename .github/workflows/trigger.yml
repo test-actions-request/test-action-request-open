@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Invoke workflow and handle result
         id: trigger-step
-        uses: benc-uk/workflow-dispatch@v1
+        uses: aurelien-baudet/workflow-dispatch@v2.1.1
         with:
           token: ${{ secrets.MY_TOKEN }}
           workflow: 'build.yml'
