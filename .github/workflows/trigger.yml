@@ -15,7 +15,6 @@ jobs:
         with:
           token: ${{ secrets.MY_TOKEN }}
           repo: 'hello-world'
-          workflow: 'build.yml'
           inputs: '{ "key": "blah blah", "debug": true }'
       - name: Another step that can handle the result
         if: always()
