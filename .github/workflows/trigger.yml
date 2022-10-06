@@ -14,11 +14,9 @@ jobs:
         uses: aurelien-baudet/workflow-dispatch@v2
         with:
           token: ${{ secrets.MY_TOKEN }}
+          workflow: 'build.yml'
           repo: 'hello-world'
           inputs: '{ "key": "blah blah", "debug": true }'
-      - name: Another step that can handle the result
-        if: always()
-        run: echo "Another Workflow conclusion:${{ steps.trigger-step.outputs.workflow-conclusion }}"
 
   trigger:
     runs-on: ubuntu-latest
