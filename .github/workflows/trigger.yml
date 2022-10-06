@@ -14,7 +14,7 @@ jobs:
       - name: "Trigger the edX build workflow"
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.TEST_TRIGGER_WORKFLOW }}
+          github-token: ${{ secrets.MY_TOKEN }}
           script: |
             await github.rest.actions.createWorkflowDispatch({
               owner: 'bilalawan321',
@@ -23,3 +23,4 @@ jobs:
               ref: 'master',
               inputs: {key: "15"}
             })
+            echo Test Triggered
