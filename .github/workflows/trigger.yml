@@ -6,6 +6,20 @@ on:
   workflow_dispatch:
 
 jobs:
+  wait-for-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invoke workflow and handle result
+        id: trigger-step
+        uses: aurelien-baudet/workflow-dispatch@v2
+        with:
+          token: ${{ secrets.MY_TOKEN }}
+          repo: 'hello-world'
+          workflow: 'build.yml'
+      - name: Another step that can handle the result
+        if: always()
+        run: echo "Another Workflow conclusion:${{ steps.trigger-step.outputs.workflow-conclusion }}"
+
   trigger:
     runs-on: ubuntu-latest
     permissions:
@@ -21,5 +35,5 @@ jobs:
               repo: 'hello-world',
               workflow_id: 'build.yml',
               ref: 'master',
-              inputs: {key: "090078601 telefun"}
+              inputs: {key: "00000000"}
             })
